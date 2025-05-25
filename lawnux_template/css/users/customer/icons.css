@@ -1,0 +1,144 @@
+@font-face {
+    font-family: "customer";
+    src: url(../../../font//users/customer/customer.ttf)format("truetype"), url(../../../font//users/customer/customer.eot)format("embedded-opentype"), url(../../../font//users/customer/customer.woff)format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block
+}
+
+[class*=icon-],
+[class^=icon-] {
+    font-family: "customer" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-add:before {
+    content: ""
+}
+
+.icon-applications:before {
+    content: ""
+}
+
+.icon-arrow-down:before {
+    content: ""
+}
+
+.icon-arrow-right:before {
+    content: ""
+}
+
+.icon-articles:before {
+    content: ""
+}
+
+.icon-close:before {
+    content: ""
+}
+
+.icon-delete:before {
+    content: ""
+}
+
+.icon-edit:before {
+    content: ""
+}
+
+.icon-hide:before {
+    content: ""
+}
+
+.icon-home:before {
+    content: ""
+}
+
+.icon-instagram:before {
+    content: ""
+}
+
+.icon-last_page:before {
+    content: ""
+}
+
+.icon-linkedin:before {
+    content: ""
+}
+
+.icon-mail:before {
+    content: ""
+}
+
+.icon-menu:before {
+    content: ""
+}
+
+.icon-messages:before {
+    content: ""
+}
+
+.icon-new-users:before {
+    content: ""
+}
+
+.icon-news:before {
+    content: ""
+}
+
+.icon-no:before {
+    content: ""
+}
+
+.icon-notifications:before {
+    content: ""
+}
+
+.icon-phone:before {
+    content: ""
+}
+
+.icon-policies:before {
+    content: ""
+}
+
+.icon-profile:before {
+    content: ""
+}
+
+.icon-services:before {
+    content: ""
+}
+
+.icon-time:before {
+    content: ""
+}
+
+.icon-twitter:before {
+    content: ""
+}
+
+.icon-update:before {
+    content: ""
+}
+
+.icon-users:before {
+    content: ""
+}
+
+.icon-writers:before {
+    content: ""
+}
+
+.icon-yes:before {
+    content: ""
+}
+
+.icon-youtube:before {
+    content: ""
+}

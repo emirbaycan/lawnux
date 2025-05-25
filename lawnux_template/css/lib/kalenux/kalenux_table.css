@@ -1,0 +1,139 @@
+#kalenux_templates {
+    display: none
+}
+
+.kt-mid {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.kt-bot {
+    padding: 1rem 0 0;
+    display: flex
+}
+
+.kt-bot button {
+    background: 0 0;
+    border: 0;
+    color: black;
+    font-size: .9rem;
+    margin: auto 0;
+    padding: 1rem
+}
+
+.ktn-parts {
+    display: flex;
+    margin: auto
+}
+
+.ktn-item.active,
+.ktn-item:focus,
+.ktn-item:hover {
+    color: var(--primary-color)
+}
+
+.kt-header {
+    display: flex;
+    width: 100%
+}
+
+.kt-handle,
+.kt-head,
+.kt-head-plus {
+    align-items: center;
+    justify-content: center;
+    color: #fff
+}
+
+.kt-head {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem .5rem;
+    box-sizing: border-box;
+    display: flex;
+    white-space: nowrap
+}
+
+.kt-handle,
+.kt-head-plus {
+    min-width: 4rem;
+    display: none;
+    min-height: 4rem;
+    cursor: pointer
+}
+
+.kt-cell[data-state=open] .kt-handlers .kt-deactive,
+.kt-deactive+.kt-head-plus,
+.kt-handle[data-state=open],
+.kt-head-plus[data-state=open] {
+    display: flex
+}
+
+.kt-cell,
+.kt-cell-inner,
+.kt-item {
+    display: flex;
+    width: 100%
+}
+
+.kt-item {
+    padding: .5rem;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    justify-content: center
+}
+
+.kalenux-table,
+.kalenux-table-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+.kt-deactive {
+    display: none
+}
+
+.kt-cell {
+    flex-direction: column;
+    font-size: .9rem
+}
+
+.kt-handler {
+    display: flex
+}
+
+.kt-handler-body {
+    width: 100%;
+    padding-left: .5rem;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex
+}
+
+.icon-plus:before {
+    content: ""
+}
+
+.icon-minus:before {
+    content: ""
+}
+
+.kt-handler-head {
+    display: flex;
+    margin: auto
+}
+
+.kt-handler-head .kt-head {
+    width: auto;
+    white-space: nowrap
+}
+
+.kt-check-width .kt-deactive {
+    display: flex
+}

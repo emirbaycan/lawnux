@@ -1,0 +1,309 @@
+.career-top {
+    display: flex;
+    flex-direction: column
+}
+
+.ht-inner {
+    border-bottom: 0
+}
+
+.career-top p {
+    padding: 5rem 0;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+    position: relative
+}
+
+.career-top p:before {
+    background-image: url(../../../img/aries.png);
+    background-position: center;
+    background-size: contain;
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    background-repeat: no-repeat
+}
+
+.career-navs {
+    display: flex
+}
+
+.career-contents {
+    display: flex;
+    min-width: 500px;
+    height: 500px;
+    width: 300%;
+    line-height: 2
+}
+
+.career-nav {
+    width: 33.33%;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    color: #000;
+    cursor: pointer
+}
+
+.career-mid {
+    display: flex
+}
+
+.career-image {
+    width: 0;
+    overflow: hidden;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute
+}
+
+.career-image.selected {
+    width: 100%
+}
+
+.career-images {
+    position: relative;
+    min-width: 500px;
+    height: 500px
+}
+
+.career-content {
+    height: 100%;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    margin: 2rem 0
+}
+
+.career-content.selected {
+    width: 33.33%
+}
+
+.career-right {
+    min-width: 500px;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    overflow: hidden
+}
+
+.career-nav.selected {
+    background: var(--primary-color);
+    color: #fff;
+    border-bottom: solid 3px var(--secondary-color)
+}
+
+.career-nav:not(.selected):hover {
+    color: var(--primary-color)
+}
+
+.career-bot {
+    border-top: solid 3px var(--secondary-color);
+    background: var(--gray-color);
+    color: var(--primary-color)
+}
+
+.career-bot h2 {
+    margin: auto;
+    display: table;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    background: var(--primary-color);
+    transform: translateY(-50%)
+}
+
+.career-applicate {
+    display: flex;
+    flex-direction: column
+}
+
+.ca-top {
+    display: flex;
+    padding-top: 2.5rem
+}
+
+.ca-left,
+.ca-right {
+    width: 50%;
+    box-sizing: border-box
+}
+
+.ca-bot {
+    text-align: center;
+    padding-bottom: 2.5rem;
+    line-height: 2
+}
+
+.ca-bot .btn {
+    display: table;
+    margin: 1rem auto auto
+}
+
+.ca-bot,
+.career-part {
+    display: flex;
+    flex-direction: column
+}
+
+.career-input,
+.career-textarea {
+    border: 0;
+    border: solid 1px var(--secondary-color);
+    background: 0 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    padding: .5rem
+}
+
+.career-label {
+    font-size: 1rem;
+    padding-bottom: 1rem
+}
+
+.ca-left {
+    padding-right: 1rem
+}
+
+.ca-right {
+    padding-left: 1rem
+}
+
+.career-textarea {
+    height: 12rem
+}
+
+.kalenux-select {
+    font-size: 1rem
+}
+
+.kalenux-options,
+.kalenux-search {
+    border: solid 1px var(--secondary-color)
+}
+
+.kalenux-search {
+    background: 0 0;
+    color: var(--secondary-color) !important
+}
+
+.kalenux-options {
+    background: #171f34;
+    border-top: 0;
+    border-bottom: solid 1px var(--secondary-color) !important;
+    color: #fff
+}
+
+.kalenux-option:hover {
+    color: var(--primary-color) !important
+}
+
+li.kalenux-option.kalenux-option-selected {
+    color: var(--secondary-color)
+}
+
+.kalenux-file input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer
+}
+
+.kalenux-file {
+    position: relative;
+    height: 2.2rem
+}
+
+.kalenux-file-box {
+    width: 100%;
+    height: 100%;
+    border: solid 1px var(--secondary-color);
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    transition: .3s
+}
+
+.kalenux-file-adder {
+    height: 100%;
+    display: flex;
+    position: relative;
+    z-index: 1
+}
+
+.kalenux-file p {
+    margin: auto 1rem
+}
+
+.kalenux-file-box span:before {
+    content: "+";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--secondary-color);
+    transition: .3s
+}
+
+.kalenux-file:hover .kalenux-file-box,
+.kalenux-file[data-status=filled] .kalenux-file-box {
+    background: var(--secondary-color)
+}
+
+.kalenux-file:hover span:before,
+.kalenux-file[data-status=filled] .kalenux-file-box span,
+.kalenux-file[data-status=filled] .kalenux-file-box span:before {
+    color: #fff
+}
+
+@media (max-width:1024px) {
+
+    .career-images,
+    .career-right {
+        width: 100%;
+        min-width: auto
+    }
+}
+
+@media (max-width:650px) {
+    .career-mid {
+        flex-direction: column
+    }
+
+    .career-images {
+        height: 300px;
+        min-width: auto
+    }
+
+    .career-right {
+        min-width: auto;
+        padding-top: 5rem;
+        padding-left: 0
+    }
+}
+
+@media (max-width:450px) {
+    .ca-top.widther {
+        flex-direction: column
+    }
+
+    .ca-left,
+    .ca-right {
+        width: 100%;
+        padding: 0
+    }
+
+    .ca-left {
+        padding-bottom: 1rem !important
+    }
+
+    .career-contents {
+        height: 650px
+    }
+}

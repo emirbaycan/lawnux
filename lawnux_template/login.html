@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#16081A" />
+    <link href="css/general/general.css" rel="stylesheet">
+    <link href="css/main/general/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link href="css/main/pages/login.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="img/favicon.png?_t=myybe1nmcbymeyr">
+    <meta name="google-signin-client_id"
+        content="543195609549-2th51s0f8r2ho8hh9mcnrbarfohr0jnn.apps.googleusercontent.com">
+    <link href="css/lib/kalenux/popup.css" rel="stylesheet">
+    <link href="css/lib/kalenux/select.css" rel="stylesheet">
+    <title>Login - Lawnux</title>
+    <script src="js/general/header.js"></script>
+    <script src="js/main/general/header.js"></script>
+</head>
+
+<body class="preload" onload="onloaded();">
+    <div class="popup signin" id="signin" data-state="open">
+        <div class="popup-inner signin-in">
+            <div class="signin-left">
+                <img src="img/logo-blue.png" alt="Lawnux">
+            </div>
+            <div class="signin-right">
+                <h2 class="sr-top">Login</h2>
+                <div class="sr-mid">
+                    <label id="log_status" class="status"></label>
+                    <form class="inputs" onsubmit="return login(event,this);" autocomplete="on">
+                        <div>
+                            <input class="judge" id="log_username" name="username" autocomplete="on"
+                                placeholder="Email / ID">
+                        </div>
+                        <div>
+                            <input class="judge" id="log_password" name="password" autocomplete="on" type="password"
+                                placeholder="Password">
+                        </div>
+                        <div class="sr-part">
+                            <input class="submit" type="submit" value="Login">
+                        </div>
+                    </form>
+                    <div class="goba">
+                        <p>Not a member ?<strong class="copen" data-the="signin" data-to="signon"> Join now</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-close " data-the="signin"></div>
+    </div>
+    <div class="popup signin" id="signon">
+        <div class="popup-inner signin-in">
+            <div class="signin-left">
+                <img src="img/logo-blue.png" alt="Lawnux Law and Consultancy Firm">
+            </div>
+            <div class="signin-right">
+                <h2 class="sr-top">Register</h2>
+                <div class="sr-mid">
+                    <label id="reg_status" class="status"></label>
+                    <form class="inputs" onsubmit="return register(event,this);" autocomplete="on">
+                        <div>
+                            <input id="reg_username" type="text" name="username" class="judge" placeholder="ID">
+                        </div>
+                        <div>
+                            <input id="reg_email" name="email" type="email" class="judge" placeholder="Email">
+                        </div>
+                        <div>
+                            <input id="reg_password" type="password" autocomplete="password" name="password"
+                                class="judge" placeholder="Password">
+                        </div>
+                        <button class="checkbox-holder">
+                            <input type="checkbox" class="checkbox" name="agreement">
+                            <span class="checkbox"></span>
+                            <p class="checkbox-text">
+                                <a href="policies" target="_blank">Policies</a>,
+                                i aggree
+                            </p>
+                        </button>
+                        <div class="sr-part">
+                            <input class="submit" type="submit" value="Kayıt Ol" style="margin-bottom: 0;">
+                        </div>
+                    </form>
+                    <div class="goba">
+                        <p>Already have an account?<strong class="copen" data-the="signon" data-to="signin"> Login</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-close " data-the="signon"></div>
+    </div>
+    <script src="js/lib/kalenux/popup.js" defer></script>
+    <script defer src="js/general/footer.defer.js"></script>
+    <script src="js/main/general/footer.defer.js"></script>
+</body>
+
+
+</html>

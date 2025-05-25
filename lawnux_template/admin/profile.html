@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#16081A" />
+  <link href="../css/general/general.css" rel="stylesheet">
+  <link href="../css/users/general/panel.css" rel="stylesheet">
+  <link href="../css/users/general/login.css" rel="stylesheet">
+  <link href="../css/users/general/icons.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <link rel="apple-touch-icon" href="../img/favicon.png">
+  <meta name="google-signin-client_id"
+    content="543195609549-2th51s0f8r2ho8hh9mcnrbarfohr0jnn.apps.googleusercontent.com">
+  <meta name="og:image" content="https://lawnux.emirbaycan.com.tr//img/logo.png">
+  <link href="../css/lib/kalenux/popup.css" rel="stylesheet">
+  <link href="../css/users/profile.css" rel="stylesheet">
+  <title>Profile - Lawnux</title>
+  <script src="../js/general/header.js"></script>
+</head>
+
+<body class="preload">
+  <div class="menu">
+    <div class="menu-outer">
+      <div class="menu-inner">
+        <div class="menu-bg"></div>
+        <div class="menu-left">
+          <div class="menu-left-top">
+            <a class="mhlogo" href="">
+              <img src="../img/favicon.png">
+            </a>
+          </div>
+          <div class="menu-left-bot">
+            <a class="header-action" href='messages'>
+              <span class="icon-messages"></span>
+              <p>Messages</p>
+            </a>
+            <a class="header-action" href='applications'>
+              <span class="icon-applications"></span>
+              <p>Applications</p>
+            </a>
+            <a class="header-action" href='services'>
+              <span class="icon-services"></span>
+              <p>Services</p>
+            </a> 
+            <a class="header-action" href='articles'>
+              <span class="icon-articles"></span>
+              <p>Articles</p>
+            </a>
+            <a class="header-action" href='policies'>
+              <span class="icon-policies"></span>
+              <p>Policies</p>
+            </a>
+            <a class="header-action" href='users'>
+              <span class="icon-users"></span>
+              <p>Users</p>
+            </a>
+            <a class="header-action" href='writers'>
+              <span class="icon-writers"></span>
+              <p>Writers</p>
+            </a>
+            <button class="header-action" onclick='logout()'>
+              <span class="icon-no"></span>
+              <p>Logout</p>
+            </button>
+          </div>
+        </div>
+        <div class="menu-right">
+          <div class="mr-top">
+            <div class="notifications-outer"> <span class="icon-notifications"></span>
+              <div class="notifications-inner" id="notifications_holder"></div>
+            </div>
+            <div class="table-title"> <span class="icon-profile"></span>
+              <p>Profile</p> <span class="icon-profile"></span>
+            </div>
+            <div class="navs">
+              <div class="navs-holder">
+                <div class="user-image" id="user_image"></div>
+              </div>
+              <div class="menus" id="general_header_menu">
+              </div>
+            </div>
+          </div>
+          <div class="table-menu">
+            <div class="profile-container"> <input type="hidden" id="changeds" value="city,">
+              <div class="profile-left">
+                <div class="profile-parts">
+                  <div class="profile-part"> <label>Username</label> <input placeholder="Username"
+                      onkeyup="inputed(this)" value="" id="username_2"> </div>
+                  <div class="profile-part"> <label>New password</label> <input type="password" onkeyup="inputed(this)"
+                      placeholder="Your new password" id="password"> </div>
+                </div>
+                <div class="profile-act"> <button class="btn btn-profile" onclick="savec()">Save</button> </div>
+              </div>
+              <div class="profile-right">
+                <div class="pr-inner">
+                  <div class="profile-image" id="user_image_2"> </div>
+                  <p class="profile-name" id="username_2"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/users/profile.js"></script>
+    <script src="../js/users/general/users.js"></script>
+    <script src="../js/lib/kalenux/popup.js" defer></script>
+    <script defer src="../js/general/footer.defer.js"></script>
+</body>
+
+</html>

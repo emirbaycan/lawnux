@@ -1,0 +1,605 @@
+@keyframes preloader {
+
+    0%,
+    to {
+        opacity: .5
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+@keyframes opacity {
+
+    0%,
+    to {
+        opacity: 1
+    }
+
+    50% {
+        opacity: .5
+    }
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../../font/Montserrat/Montserrat-Regular.woff)format("woff");
+    font-display: swap
+}
+
+:root {
+    --primary-color: #171f34;
+    --gray-color: #f3f2f0;
+    --light-panel-color: #f3f3f3;
+    --panel-color: #8d8d8d;
+    --medium-panel-color: #4a4a4a;
+    --dark-panel-color: #000000;
+    --secondary-color: #ceac6e;
+    --table-border-color: var(--light-panel-color)
+}
+
+html {
+    background: var(--primary-color);
+    font-family: "Montserrat";
+    scroll-behavior: smooth
+}
+
+body {
+    background: #fff
+}
+
+body,
+html {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin: 0;
+    overflow-x: hidden;
+    min-height: 100%
+}
+
+html::-webkit-scrollbar {
+    width: .7rem
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--gray-color)
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--primary-color)
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color)
+}
+
+.preload * {
+    transition: auto !important
+}
+
+* {
+    outline: 0;
+    font-family: "Noto Sans", sans-serif
+}
+
+h1 {
+    font-size: 2rem
+}
+
+button,
+input {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: 0
+}
+
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important
+}
+
+button {
+    cursor: pointer
+}
+
+label[required]::after {
+    color: #cd5c5c;
+    content: " *"
+}
+
+dl,
+ol,
+ul {
+    padding: 0;
+    margin: 0
+}
+
+h2 {
+    font-size: 1.25rem
+}
+
+h3 {
+    font-size: 1.17rem
+}
+
+img.defer[data-src] {
+    opacity: 0
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: inherit
+}
+
+kalenux-template {
+    display: none
+}
+
+.kalenux-alert {
+    background: var(--primary-color) !important
+}
+
+.kalenux-alert-action {
+    background: #0c152d !important;
+    color: var(--secondary-color) !important
+}
+
+.preloader {
+    transition: .1s;
+    opacity: 1;
+    visibility: visible
+}
+
+.preloader[data-state=""] {
+    opacity: 0;
+    visibility: hidden
+}
+
+@media (max-width:1366px) {
+    html {
+        font-size: 16px
+    }
+}
+
+@media (max-width:1276px) {
+    html {
+        font-size: 15px
+    }
+}
+
+@media (max-width:1024px) {
+    html {
+        font-size: 14px
+    }
+}
+
+@media (max-width:650px) {
+    .preloader img {
+        width: 200px !important;
+        height: 69.69px
+    }
+
+    .social-medias {
+        width: auto;
+        margin: auto;
+        display: flex;
+        justify-content: center
+    }
+}
+
+#noti a:hover {
+    color: var(--primary-color)
+}
+
+form {
+    position: relative
+}
+
+.status,
+span.checkbox:after {
+    position: absolute;
+    transition: .3s
+}
+
+.status {
+    color: transparent;
+    text-align: center;
+    margin: auto;
+    display: table;
+    top: -.5rem;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    white-space: nowrap;
+    font-size: .9rem
+}
+
+.status[data-status=error] {
+    color: #cd5c5c
+}
+
+.status[data-status=valid] {
+    color: #3cb371
+}
+
+.status[data-status=info] {
+    color: var(--gray-color)
+}
+
+.checkbox-holder {
+    display: flex;
+    background: 0 0;
+    border: 0;
+    height: 100%;
+    align-items: center;
+    position: relative
+}
+
+.checkbox-text {
+    font-size: .8rem;
+    color: gray;
+    margin: auto 1rem;
+    transition: .3s
+}
+
+.checkbox-text a,
+span.checkbox {
+    position: relative;
+    cursor: pointer
+}
+
+.checkbox-text a {
+    color: var(--gray-color);
+    z-index: 4
+}
+
+span.checkbox {
+    width: 1rem;
+    height: 1rem;
+    background: 0 0;
+    background: #4c4c4c;
+    border: 1px solid transparent;
+    border-radius: .2rem;
+    padding: 0;
+    box-sizing: border-box;
+    margin: auto 0 auto 1rem;
+    transition: .3s
+}
+
+span.checkbox:after {
+    content: "";
+    left: calc(50% - .26rem);
+    top: calc(50% - .05rem);
+    width: .2rem;
+    height: .5rem;
+    border: solid #16081a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg) translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden
+}
+
+.checkbox:checked+span.checkbox:after {
+    opacity: 1;
+    visibility: visible
+}
+
+input.checkbox:checked+span {
+    background: #fff;
+    border-color: #fff
+}
+
+div.checkbox-holder {
+    flex-direction: row !important;
+    align-items: center;
+    height: auto !important
+}
+
+input.checkbox {
+    opacity: 0;
+    width: 100%;
+    position: absolute !important;
+    height: 100% !important;
+    z-index: 2
+}
+
+.btn {
+    border: 0;
+    padding: .4rem .8rem;
+    font-size: .9rem;
+    transition: .3s;
+    border-radius: 4px
+}
+
+.btn.btn-secondary {
+    background: var(--secondary-color);
+    color: #fff
+}
+
+.btn.btn-secondary:focus,
+.btn.btn-secondary:hover,
+.btn.btn-white:focus,
+.btn.btn-white:hover {
+    color: var(--secondary-color);
+    background: 0 0
+}
+
+.btn.btn-white {
+    background: #fff;
+    color: var(--primary-color)
+}
+
+.btn.btn-primary {
+    background: var(--primary-color);
+    color: var(--gray-color)
+}
+
+.btn.btn-primary:focus,
+.btn.btn-primary:hover {
+    color: var(--primary-color);
+    background: 0 0
+}
+
+.sep:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 3rem);
+    height: 3px;
+    bottom: -20px;
+    transform: translateX(-50%);
+    left: 50%;
+    border-radius: 3px
+}
+
+.sep-secondary:after {
+    background: var(--secondary-color)
+}
+
+.html a,
+.html h1 {
+    color: #fff;
+    text-align: center
+}
+
+.html h1 {
+    font-size: 1.25rem;
+    margin: 1rem auto 2rem
+}
+
+.html h2 {
+    font-size: 1rem;
+    color: #f5f5f5;
+    margin: 1rem 0
+}
+
+.html ul {
+    padding: .5rem 1rem;
+    margin: auto;
+    list-style: none
+}
+
+.html ul li:before {
+    content: "";
+    background: #fff;
+    width: .1rem;
+    height: .1rem;
+    position: absolute;
+    left: calc(-.3rem - .5rem);
+    top: .8rem;
+    transform: translateY(-50%)
+}
+
+.html li {
+    position: relative;
+    margin: .25rem auto
+}
+
+.html b {
+    color: #a9a9a9
+}
+
+.html p {
+    margin: .5rem 0
+}
+
+.html li,
+.html p {
+    color: gray;
+    font-size: .9rem
+}
+
+.html {
+    display: flex;
+    flex-direction: column
+}
+
+.html[data-state=open] {
+    max-height: 9999px
+}
+
+.html a {
+    margin: auto;
+    width: 33.33%;
+    font-size: 1rem
+}
+
+.underline {
+    position: relative
+}
+
+.underline:before {
+    content: "";
+    position: absolute;
+    top: calc(100% + .25rem);
+    width: 100%;
+    height: 1px;
+    background: var(--gray-color)
+}
+
+input::placeholder {
+    color: #fff
+}
+
+.popup,
+.popup-bg {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0
+}
+
+.popup {
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden
+}
+
+.popup[data-state=open] {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999
+}
+
+.popup-bg,
+.popup-close {
+    opacity: .5;
+    position: absolute;
+    background: var(--primary-color)
+}
+
+.popup-close {
+    height: 100%;
+    width: 100%;
+    z-index: 1
+}
+
+.popup-inner {
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90%;
+    min-width: 300px;
+    max-width: 90%;
+    overflow: auto;
+    padding: .5rem 1rem 1rem;
+    box-sizing: border-box;
+    border: solid 1px var(--table-border-color);
+    line-height: 1.7;
+    position: absolute;
+    background: #fff
+}
+
+.popup-inner.html {
+    padding: 2rem
+}
+
+.pop-header {
+    color: var(--dark-panel-color);
+    padding: 1rem 2rem
+}
+
+.pop-footer {
+    display: flex
+}
+
+.ti-actions,
+.ti-footer {
+    background: var(--secondary-color)
+}
+
+.ti-footer {
+    display: flex
+}
+
+.ti-actions {
+    width: 100%;
+    align-items: center;
+    padding: .5rem 0;
+    color: var(--primary-color);
+    transition: .1s;
+    cursor: pointer;
+    font-size: 1rem;
+    background: 0 0;
+    border: 0
+}
+
+.table-item p {
+    margin: auto 0;
+    text-align: center
+}
+
+.ti-actions span {
+    margin-left: auto
+}
+
+.ti-actions p {
+    margin: auto;
+    margin-left: 1rem
+}
+
+.pop-inputs,
+.ti-actions {
+    display: flex
+}
+
+.pop-inputs button {
+    width: 100%
+}
+
+.pop-inputs input.checkbox:checked+span+.checkbox-text {
+    color: #fff
+}
+
+.kalenux-alert {
+    position: fixed;
+    background: #291b2d;
+    z-index: 999999;
+    color: #fff;
+    border: solid 1px #36324e;
+    transition: .1s;
+    opacity: 0;
+    visibility: hidden;
+    right: 1rem;
+    bottom: 1rem
+}
+
+.kalenux-alert-text {
+    margin: auto;
+    font-size: .9rem
+}
+
+.kalenux-alert-header {
+    padding: 1rem
+}
+
+.kalenux-alert-actions {
+    display: flex
+}
+
+.kalenux-alert-action {
+    width: 100%;
+    border: 0;
+    background: #16081a;
+    color: #f58153;
+    padding: .5rem 1rem;
+    font-size: .8rem
+}
+
+.kalenux-alert-icon {
+    margin: auto;
+    display: table;
+    padding: 0 0 1rem
+}
+
+.kalenux-alert[data-state=open] {
+    opacity: 1;
+    visibility: visible
+}

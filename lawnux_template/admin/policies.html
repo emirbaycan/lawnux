@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#16081A" />
+  <link href="../css/general/general.css" rel="stylesheet">
+  <link href="../css/users/general/panel.css" rel="stylesheet">
+  <link href="../css/users/general/login.css" rel="stylesheet">
+  <link href="../css/users/general/icons.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <link rel="apple-touch-icon" href="../img/favicon.png">
+  <meta name="google-signin-client_id"
+    content="543195609549-2th51s0f8r2ho8hh9mcnrbarfohr0jnn.apps.googleusercontent.com">
+  <meta name="og:image" content="https://lawnux.emirbaycan.com.tr//img/logo.png">
+  <link href="../css/lib/kalenux/popup.css" rel="stylesheet">
+  <link rel="preload" href="../css/lib/kalenux/kalenux_table.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="../plugins/airdatepicker/css/datepicker.min.css">
+  <link href="../css/lib/kalenux/select.css" rel="stylesheet">
+  <link href="../css/lib/kalenux/onoff.css" rel="stylesheet">
+  <link href="../css/lib/kalenux/image.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+  <title>Policies - Lawnux</title>
+  <script src="../js/general/header.js"></script>
+</head>
+
+<body class="preload">
+  <div class="menu">
+    <div class="menu-outer">
+      <div class="menu-inner">
+        <div class="menu-bg"></div>
+        <div class="menu-left">
+          <div class="menu-left-top">
+            <a class="mhlogo" href="">
+              <img src="../img/favicon.png">
+            </a>
+          </div>
+          <div class="menu-left-bot">
+
+            <a class="header-action" href='messages'>
+              <span class="icon-messages"></span>
+              <p>Messages</p>
+            </a>
+            <a class="header-action" href='applications'>
+              <span class="icon-applications"></span>
+              <p>Applications</p>
+            </a>
+            <a class="header-action" href='services'>
+              <span class="icon-services"></span>
+              <p>Services</p>
+            </a> 
+            <a class="header-action" href='articles'>
+              <span class="icon-articles"></span>
+              <p>Articles</p>
+            </a>
+            <a class="header-action" href='policies'>
+              <span class="icon-policies"></span>
+              <p>Policies</p>
+            </a>
+            <a class="header-action" href='users'>
+              <span class="icon-users"></span>
+              <p>Users</p>
+            </a>
+            <a class="header-action" href='writers'>
+              <span class="icon-writers"></span>
+              <p>Writers</p>
+            </a>
+            <button class="header-action" onclick='logout()'>
+              <span class="icon-no"></span>
+              <p>Logout</p>
+            </button>
+          </div>
+        </div>
+        <div class="menu-right">
+          <div class="mr-top">
+            <div class="table-title">
+              <span class="icon-policies"></span>
+              <p>Policies</p>
+              <span class="icon-policies"></span>
+            </div>
+          </div>
+          <div class="table-menu">
+            <div class="table-inner">
+              <div class="table-header">
+                <div class="table-action filter-holder">
+                  <button class="table-search-button copen" data-to="add_policy">New Policy</button>
+                </div>
+                <div class="table-filters" id="table_filters" data-filters="table_show,table_date,table_search">
+                  <div class="filter-holder">
+                    <p>Search</p>
+                    <div class="table-search">
+                      <input class="table-input table-filter" data-type="search" data-name="search" id="table_search"
+                        placeholder="Search all posts" autocomplete="off">
+                        <button class="table-search-button" onclick="setNav(1,tables.item)">Search</button>
+                    </div>
+                  </div>
+                  <div class="filter-holder">
+                    <p>Date</p>
+                    <input class="datepicker-here table-input table-filter" data-type="date" data-name="date"
+                      data-range="true" data-multiple-dates-separator=" | " id="table_date" data-position="bottom left"
+                      data-language="en" placeholder="Select Date Range" type="text" autocomplete="off">
+                  </div>
+                  <div class="filter-holder">
+                    <p>Limit</p>
+                    <div class="kalenux-select-holder">
+                      <select class="kalenux-selects table-filter" data-type="select" data-name="limit" id="table_show"
+                        data-placeholder="Number of records to show">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="40">40</option>
+                        <option value="80">80</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="table-content">
+                <div class="kalenux-tables" data-order='{"2":1}' data-nav="true"
+                  data-header="Title, Summary, Publish Time, Actions" data-type="user" data-url="get/policies"
+                  data-id="item"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <kalenux-template id="item">
+    <item class="kt-cell">
+      <ul class="kt-cell-inner">
+        <li class="kt-item">+header+</li>
+        <li class="kt-item">+pre_content+</li>
+        <li class="kt-item">+created_at+</li>
+        <li class="kt-item">+id.getActions+</li>
+      </ul>
+    </item>
+  </kalenux-template>
+  <div class="popup" id="edit_policy" data-url="update/policy">
+    <div class="popup-close copen" data-the="edit_policy"></div>
+    <div class="popup-inner pop-large">
+      <div class="pop-header">
+        <p>Title</p>
+        <input class="pop-input kalenux-change" data-name="header" id="edit_header" />
+        <p>Image</p>
+        <div class="kalenux-image-holder">
+          <div class="kalenux-images kalenux-change" data-type="image" data-name="image" id="edit_image" data-api="user"
+            data-compress="1" data-folder="/temp/" data-upload="upload/file" data-maxWidth="1080" data-maxHeight="1080">
+          </div>
+        </div>
+        <p>Introduction</p>
+        <textarea class="pop-input kalenux-change" data-name="pre_content" id="edit_pre_content"></textarea>
+        <p>Content</p>
+        <div class="kalenux-content kalenux-change" data-type="content" data-name="content" id="edit_content"></div>
+        <p>Visibility</p>
+        <div class="kalenux-onoff-holder">
+          <input class="kalenux-onoffs kalenux-change" data-value="1" data-name="visibility">
+        </div>
+        <p>Publication Time</p>
+        <input class="datepicker-here pop-input kalenux-change" data-type="date" data-name="created_at"
+          id="edit_created_at" data-timepicker="true" data-date-format="yyyy-mm-dd" data-time-format='hh:ii:00'
+          data-position="top right" data-language="en" placeholder="Select Date" type="text" autocomplete="off">
+      </div>
+      <div class="pop-footer ti-footer">
+        <button class="ti-actions" onclick="update(this)">
+          <span class="icon-update"></span>
+          <p>Update</p>
+        </button>
+        <button class="ti-actions copen" data-the="edit_policy">
+          <span class="icon-close"></span>
+          <p>Close</p>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="popup" id="add_policy" data-url="add/policy">
+    <div class="popup-close copen" data-the="add_policy"></div>
+    <div class="popup-inner pop-large">
+      <div class="pop-header">
+        <p>Title</p>
+        <input class="pop-input kalenux-add" data-name="header">
+        <p>Image</p>
+        <div class="kalenux-image-holder">
+          <div class="kalenux-images kalenux-add" data-type="image" data-name="image" data-api="user" data-compress="1"
+            data-folder="/temp/" data-upload="upload/file" data-maxWidth="1080" data-maxHeight="1080">
+          </div>
+        </div>
+        <p>Introduction</p>
+        <textarea class="pop-input kalenux-add" data-name="pre_content"></textarea>
+        <p>Content</p>
+        <div class="kalenux-content kalenux-add" data-type="content" data-name="content" id="add_content"></div>
+        <p>Visibility</p>
+        <div class="kalenux-onoff-holder">
+          <input class="kalenux-onoffs kalenux-add" data-value="1" data-name="visibility">
+        </div>
+        <p>Publication Time</p>
+        <input class="datepicker-here pop-input kalenux-add" id="add_created_at" data-type="date" data-name="created_at"
+          data-timepicker="true" data-date-format="yyyy-mm-dd" data-time-format='hh:ii:00' data-position="top right"
+          data-language="en" placeholder="Select Date" type="text" autocomplete="off">
+      </div>
+      <div class="pop-footer ti-footer">
+        <button class="ti-actions" onclick="add(this)">
+          <span class="icon-add"></span>
+          <p>Add</p>
+        </button>
+        <button class="ti-actions copen" data-the="add_policy">
+          <span class="icon-close"></span>
+          <p>Close</p>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="../js/users/general/users.js"></script>
+  <script src="../plugins/airdatepicker/js/datepicker.min.js"></script>
+  <script src="../plugins/airdatepicker/js/datepicker.js"></script>
+  <script src="../js/lib/kalenux/templater.js" defer></script>
+  <script src="../js/lib/kalenux/kalenux_table.js" defer></script>
+  <script src="../js/lib/kalenux/select.js"></script>
+  <script src="../js/lib/kalenux/checkbox.js"></script>
+  <script src="../js/lib/kalenux/image.js"></script>
+  <script src="../js/lib/kalenux/popup.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <script src="../js/users/admin/policies.js" charset="UTF-8"></script>
+  <script src="../js/lib/kalenux/popup.js" defer></script>
+  <script defer src="../js/general/footer.defer.js"></script>
+</body>
+
+</html>
